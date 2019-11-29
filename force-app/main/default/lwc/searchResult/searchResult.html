@@ -1,12 +1,13 @@
 <template>
-            <template if:true={incidents}>
-                   
-            <div style="height: 300px;">
-                    <lightning-datatable
-                            key-field="id"
-                            columns={columns}
-                            data={incidents.data} ></lightning-datatable>
-                    
-                </div> 
-            </template>
+  <template if:true={incidents}>
+    <div style="height: 300px;">
+      <lightning-datatable
+        key-field="id"
+        data={incidents.data}
+        show-row-number-column
+        hide-checkbox-column
+        columns={columns}
+      ></lightning-datatable>
+    </div>
+  </template>
 </template>

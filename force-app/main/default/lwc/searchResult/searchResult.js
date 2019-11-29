@@ -1,17 +1,15 @@
-import { LightningElement,wire,track } from 'lwc';
+import { LightningElement, wire, track } from 'lwc';
 import { CurrentPageReference } from 'lightning/navigation';
 import findIncidents from '@salesforce/apex/incidentmanagement.findIncidents';
 import { registerListener, unregisterAllListeners } from 'c/pubsub';
-
-
 const columns = [
- 
-    {label: 'Incident #', fieldName: 'incidentURL', type: 'url', 
-    typeAttributes: {label: { fieldName: 'incidentId' }, target: '_blank'}},
+    {
+        label: 'Incident #', fieldName: 'incidentURL', type: 'url',
+        typeAttributes: { label: { fieldName: 'incidentId' }, target: '_blank' }
+    },
     { label: 'Applies To', fieldName: 'appliesTo', type: 'string' },
     { label: 'Status', fieldName: 'status', type: 'string' },
     { label: 'Summary', fieldName: 'summary', type: 'string' },
-
 ];
 
 export default class SearchResult extends LightningElement {
@@ -24,10 +22,10 @@ export default class SearchResult extends LightningElement {
     appliesToValue;
 
     @wire(CurrentPageReference) pageRef;
-    
+
     @wire(findIncidents, { incNum: '$incNoVal', statusValue: '$statusValue', appliesToValue: '$appliesToValue' })
     incidents;
-   
+
     connectedCallback() {
         // subscribe to searchKeyChange event
         registerListener('searchKey', this.handleSearchKeyChange, this);
@@ -39,8 +37,6 @@ export default class SearchResult extends LightningElement {
     }
 
     handleSearchKeyChange(searchKey) {
-
-
         this.incNoVal = searchKey.incNo;
         this.statusValue = searchKey.statusValue;
         this.appliesToValue = searchKey.appliesToValue;
