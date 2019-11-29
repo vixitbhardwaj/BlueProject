@@ -1,13 +1,14 @@
 <template>
-    <lightning-card  title="Search Incident">
+    <lightning-card  title="Search Incidents">
 
-            <lightning-input type="text" name= "insNo" label="Incident #" value={insNum} onchange={handleIncNum}></lightning-input>
+        <!--<lightning-input type="text" name= "insNo" label="Incident #" value={insNum} onchange={handleIncNum}></lightning-input>-->
+        <lightning-input name="incNum" type="text" label="Incident Number" value={incNum} onchange={handleIncNum} ></lightning-input>
            <template if:true={statusValues.data}>
             <lightning-combobox
             name="status"
             label="Status"
             value={statusValue}
-            placeholder="Select Status"
+            placeholder="-Select-"
             options={statusValues.data.values}
             onchange={handleChange} ></lightning-combobox>
         </template>
@@ -16,11 +17,11 @@
             name="appliesTo"
             label="Applies To"
             value={appliesToValue}
-            placeholder="Select Applies To"
+            placeholder="-Select-"
             options={appliesToValues.data.values}
             onchange={handleChange} ></lightning-combobox>
         </template>
-  <lightning-button variant="brand" label="Brand" title="Search Incident" onclick={handleSearch} class="slds-m-left_x-small"></lightning-button>
+  <lightning-button variant="brand" label="Search" title="Search Incident" onclick={handleSearch} class="slds-m-left_x-small" slot="actions" ></lightning-button>
 
     </lightning-card>
 </template>

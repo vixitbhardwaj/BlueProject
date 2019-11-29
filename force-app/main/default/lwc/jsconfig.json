@@ -5,6 +5,12 @@
         "paths": {
             "c/incidentSearch": [
                 "incidentSearch/incidentSearch.js"
+            ],
+            "c/pubsub": [
+                "pubsub/pubsub.js"
+            ],
+            "c/searchResult": [
+                "searchResult/searchResult.js"
             ]
         }
     },

@@ -1,0 +1,12 @@
+<template>
+            <template if:true={incidents}>
+                   
+            <div style="height: 300px;">
+                    <lightning-datatable
+                            key-field="id"
+                            columns={columns}
+                            data={incidents.data} ></lightning-datatable>
+                    
+                </div> 
+            </template>
+</template>
