@@ -3,11 +3,21 @@
     <div style="height: 300px;">
       <lightning-datatable
         key-field="id"
-        data={incidents.data}
+        data={data}
         show-row-number-column
         hide-checkbox-column
         columns={columns}
       ></lightning-datatable>
+      <div class="slds-m-vertical_medium content">
+        Displaying {startingRecord} to {endingRecord} of {totalRecountCount}
+        records. Page {page} of {totalPage}.
+      </div>
+      <div>
+        <c-paginator
+          onprevious={previousHandler}
+          onnext={nextHandler}
+        ></c-paginator>
+      </div>
     </div>
   </template>
 </template>

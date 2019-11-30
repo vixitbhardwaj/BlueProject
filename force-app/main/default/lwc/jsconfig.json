@@ -6,6 +6,9 @@
             "c/incidentSearch": [
                 "incidentSearch/incidentSearch.js"
             ],
+            "c/paginator": [
+                "paginator/paginator.js"
+            ],
             "c/pubsub": [
                 "pubsub/pubsub.js"
             ],
