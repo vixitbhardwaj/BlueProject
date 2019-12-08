@@ -1,4 +1,4 @@
-import { LightningElement, wire, track } from 'lwc';
+import { LightningElement, wire, track, api } from 'lwc';
 import { CurrentPageReference } from 'lightning/navigation';
 import findIncidents from '@salesforce/apex/incidentmanagement.findIncidents';
 import { registerListener, unregisterAllListeners } from 'c/pubsub';
@@ -17,7 +17,7 @@ export default class SearchResult extends LightningElement {
     @track items = []; //it contains all the records.
     @track data = []; //data to be display in the table
     @track columns; //holds column info.
-    @track startingRecord = 1; //start record position per page
+    @api startingRecord = 1; //start record position per page
     @track endingRecord = 0; //end record position per page
     @track pageSize = 5; //default value we are assigning
     @track totalRecountCount = 0; //total record count received from all retrieved records

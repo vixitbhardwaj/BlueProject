@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Design Attribute Demo" icon-name="custom:custom19">
+        <center>
+            <h3>HI, <b>{strName}</b></h3><br />
+            <div if:true={showDetails}>
+                <ul>
+                    <li> Emp Name: <b>{empName}</b></li>
+                    <li> Emp Department: <b>{empDepartment}</b></li>
+                    <li> Emp Location: <b>{empLocation}</b></li>
+                    <li> Emp Age: <b>{empAge}</b><br /></b></li>
+                    <li> Emp Gender: <b>{empGender}</b></li>
+                </ul>
+            </div>
+        </center>
+    </lightning-card>
+</template>

@@ -1,0 +1,87 @@
+<template>
+  <!-- lightning button for open modal window -->
+  <lightning-button
+    variant="brand"
+    label="Open Modal"
+    title="Open Modal"
+    onclick={openModal}
+    class="slds-m-right_x-small"
+    icon-name="utility:download"
+    icon-position="left"
+  ></lightning-button>
+
+  <!-- modal start -->
+  <template if:true={bShowModal}>
+    <section
+      role="dialog"
+      tabindex="-1"
+      aria-labelledby="modal-heading-01"
+      aria-modal="true"
+      aria-describedby="modal-content-id-1"
+      class="slds-modal slds-fade-in-open slds-modal_large"
+    >
+      <div class="slds-modal__container">
+        <!-- modal header start -->
+        <header class="slds-modal__header">
+          <button
+            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+            title="Close"
+            onclick={closeModal}
+          >
+            <lightning-icon
+              icon-name="utility:close"
+              alternative-text="close"
+              variant="inverse"
+              size="small"
+            ></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+          </button>
+          <h2
+            id="modal-heading-01"
+            class="slds-text-heading_medium slds-hyphenate"
+          >
+            Modal Header with LWC
+          </h2>
+        </header>
+        <!-- modal body start -->
+        <div
+          class="slds-modal__content slds-p-around_medium"
+          id="modal-content-id-1"
+        >
+          
+          <lightning-card title="Design Attribute Demo" icon-name="custom:custom19">
+        <center>
+            <h3>HI, <b>{strName}</b></h3><br />
+            <div if:true={showDetails}>
+                <ul>
+                    <li> Emp Name: <b>{empName}</b></li>
+                    <li> Emp Department: <b>{empDepartment}</b></li>
+                    <li> Emp Location: <b>{empLocation}</b></li>
+                    <li> Emp Age: <b>{empAge}</b><br /></b></li>
+                    <li> Emp Gender: <b>{empGender}</b></li>
+                </ul>
+            </div>
+        </center>
+    </lightning-card>
+          
+        </div>
+        <footer class="slds-modal__footer">
+          <button class="slds-button slds-button_neutral" onclick={closeModal}>
+            Cancel
+          </button>
+          <button class="slds-button slds-button_brand">Save</button>
+        </footer>
+        <!-- modal footer start-->
+
+        <!--
+        <footer class="slds-modal__footer">
+          <button class="slds-button slds-button_neutral" onclick={closeModal}>
+            Cancel
+          </button>
+        </footer>
+      --></div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+  <!-- modal end -->
+</template>

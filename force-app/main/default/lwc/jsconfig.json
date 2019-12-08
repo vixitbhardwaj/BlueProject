@@ -3,8 +3,17 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
+            "c/accountManager": [
+                "accountManager/accountManager.js"
+            ],
+            "c/designComponent": [
+                "designComponent/designComponent.js"
+            ],
             "c/incidentSearch": [
                 "incidentSearch/incidentSearch.js"
+            ],
+            "c/modalLWC": [
+                "modalLWC/modalLWC.js"
             ],
             "c/paginator": [
                 "paginator/paginator.js"
@@ -14,6 +23,9 @@
             ],
             "c/searchResult": [
                 "searchResult/searchResult.js"
+            ],
+            "c/searchResultAdvance": [
+                "searchResultAdvance/searchResultAdvance.js"
             ]
         }
     },
